@@ -24,5 +24,29 @@ namespace XoX_attempt_1
         {
             InitializeComponent();
         }
+
+        private void Rectangle_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Rectangle rect = sender as Rectangle;
+            rect.Fill = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(@"Image\O-image-transparent.jpg", UriKind.Relative))
+            };
+        }
+
+        private void Rectangle_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Rectangle rect = sender as Rectangle;
+            rect.Fill = new SolidColorBrush(Colors.White);
+        }
+
+        private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Rectangle rect = sender as Rectangle;
+            rect.Fill = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(@"Image\O-image.jpg", UriKind.Relative))
+            };
+        }
     }
 }

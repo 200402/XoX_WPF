@@ -48,5 +48,33 @@ namespace XoX_attempt_1
                 ImageSource = new BitmapImage(new Uri(@"Image\O-image.jpg", UriKind.Relative))
             };
         }
+
+        private void click_on_menu_item_play_with_player(object sender, RoutedEventArgs e)
+        {
+            all_menu_item_play_with_somebody_checked_false();
+
+            menu_item_play_with_player.IsChecked = true;
+            menu_item_first_move_at.IsEnabled = true;
+            menu_item_play_for_the.IsEnabled = false;
+        }
+
+        private void click_on_menu_item_play_with_bot(object sender, RoutedEventArgs e)
+        {
+            all_menu_item_play_with_somebody_checked_false();
+
+            MenuItem rect = sender as MenuItem;
+            rect.IsChecked = true;
+            menu_item_first_move_at.IsEnabled = false;
+            menu_item_play_for_the.IsEnabled = true;
+        }
+
+        private void all_menu_item_play_with_somebody_checked_false()
+        {
+            menu_item_play_with_player.IsChecked = false;
+            menu_item_easy.IsChecked = false;
+            menu_item_middle.IsChecked = false;
+            menu_item_hard.IsChecked = false;
+            menu_item_trained.IsChecked = false;
+        }
     }
 }

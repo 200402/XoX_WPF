@@ -16,22 +16,18 @@
 
         <Menu Height="25" VerticalAlignment="Top" FontSize="18">
             <MenuItem Header="Играть против...">
-                <MenuItem Header="Игрока" Click="click_on_menu_item_play_with_player" Name="menu_item_play_with_player"></MenuItem>
+                <MenuItem Header="Игрока"   Click="click_on_menu_item_play_with_player" Name="menu_item_play_with_player" IsChecked="True"></MenuItem>
                 <MenuItem Header="Бота">
-                    <MenuItem Header="Легко" Click="click_on_menu_item_play_with_bot" Name="menu_item_easy"></MenuItem>
-                    <MenuItem Header="Средне" Click="click_on_menu_item_play_with_bot" Name="menu_item_middle"></MenuItem>
-                    <MenuItem Header="Сложно" Click="click_on_menu_item_play_with_bot" Name="menu_item_hard"></MenuItem>
-                    <MenuItem Header="Обученный" Click="click_on_menu_item_play_with_bot" Name="menu_item_trained"></MenuItem>
+                    <MenuItem Header="Легко"        Click="click_on_menu_item_play_with_bot" Name="menu_item_easy"></MenuItem>
+                    <MenuItem Header="Средне"       Click="click_on_menu_item_play_with_bot" Name="menu_item_middle"></MenuItem>
+                    <MenuItem Header="Сложно"       Click="click_on_menu_item_play_with_bot" Name="menu_item_hard"></MenuItem>
+                    <MenuItem Header="Обученный"    Click="click_on_menu_item_play_with_bot" Name="menu_item_trained"></MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Играть за..." Name="menu_item_play_for_the">
-                <MenuItem Header="Нолик"></MenuItem>
-                <MenuItem Header="Крестик" ></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Первый ход у..." Name="menu_item_first_move_at">
-                <MenuItem Header="Нолика"></MenuItem>
-                <MenuItem Header="Крестика" ></MenuItem>
-            </MenuItem>
+                <MenuItem Header="Нолик"    Name="menu_item_play_for_the_zero"  Click="click_on_menu_item_play_for_the_zero"  IsChecked="True"></MenuItem>
+                <MenuItem Header="Крестик"  Name="menu_item_play_for_the_cross" Click="click_on_menu_item_play_for_the_cross"></MenuItem>
+            </MenuItem> 
         </Menu>
 
         <Grid Grid.Row="1">
@@ -40,9 +36,9 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
-            <Rectangle Grid.Column="1" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
-            <Rectangle Grid.Column="2" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
+            <Rectangle Name="up_left" Grid.Column="0" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
+            <Rectangle Name="up_center" Grid.Column="1" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
+            <Rectangle Name="up_right" Grid.Column="2" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -51,9 +47,9 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
-            <Rectangle Grid.Column="1" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
-            <Rectangle Grid.Column="2" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
+            <Rectangle Name="middle_left" Grid.Column="0" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
+            <Rectangle Name="middle_center" Grid.Column="1" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
+            <Rectangle Name="middle_right" Grid.Column="2" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
         </Grid>
 
         <Grid Grid.Row="3">
@@ -62,9 +58,9 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
-            <Rectangle Grid.Column="1" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
-            <Rectangle Grid.Column="2" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave"/>
+            <Rectangle Name="down_left" Grid.Column="0" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
+            <Rectangle Name="down_center" Grid.Column="1" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
+            <Rectangle Name="down_right" Grid.Column="2" Fill="White" Margin ="5 5 5 5" MouseEnter="Rectangle_MouseEnter" MouseLeave="Rectangle_MouseLeave" MouseUp="Rectangle_MouseUp"/>
         </Grid>
 
 

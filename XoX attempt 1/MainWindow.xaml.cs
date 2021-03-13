@@ -68,6 +68,21 @@ namespace XoX_attempt_1
                     ImageSource = new BitmapImage(new Uri(wayImage, UriKind.Relative))
                 };
                 game.New_turn(position[0], position[1]);
+                string win = game.Victory_check();
+                if (win != "nobody")
+                {
+                    if (win == "zero")
+                        wayImage = @"Image\O-win.png";
+                    else if (win == "cross")
+                        wayImage = @"Image\X-win.png";
+                    else
+                        wayImage = @"Image\draw.png";
+                    win_image.Fill = new ImageBrush
+                    {
+                        ImageSource = new BitmapImage(new Uri(wayImage, UriKind.Relative))
+                    };
+                    win_image.Margin = new Thickness(0, 25, 0, 0);
+                }
             }
         }
 
@@ -111,6 +126,7 @@ namespace XoX_attempt_1
             {
                 rect.Fill = new SolidColorBrush(Colors.White);
             }
+            win_image.Margin = new Thickness(0, 10000, 0, 0);
         }
 
         private void all_menu_item_play_with_somebody_checked_false()
@@ -130,28 +146,33 @@ namespace XoX_attempt_1
             switch (words[0])
             {
                 case "up":
-                    mas[0] = 0;
+                    mas[1] = 0;
                     break;
                 case "middle":
-                    mas[0] = 1;
+                    mas[1] = 1;
                     break;
                 case "down":
-                    mas[0] = 2;
+                    mas[1] = 2;
                     break;
             }
             switch (words[1])
             {
                 case "left":
-                    mas[1] = 0;
+                    mas[0] = 0;
                     break;
                 case "center":
-                    mas[1] = 1;
+                    mas[0] = 1;
                     break;
                 case "right":
-                    mas[1] = 2;
+                    mas[0] = 2;
                     break;
             }
             return mas;
+        }
+
+        private void win_image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            new_game();
         }
     }
 }
